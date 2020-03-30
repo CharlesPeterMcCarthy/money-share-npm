@@ -1,0 +1,28 @@
+{
+  "name": "@moneyshare/common-types",
+  "version": "1.0.0",
+  "description": "Common types & interfaces",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CharlesPeterMcCarthy/money-share-npm.git"
+  },
+  "author": "Charles",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CharlesPeterMcCarthy/money-share-npm/issues"
+  },
+  "homepage": "https://github.com/CharlesPeterMcCarthy/money-share-npm#readme",
+  "devDependencies": {
+    "typescript": "^3.6.3"
+  },
+  "files": [
+    "lib/**/*"
+  ],
+  "dependencies": { }
+}
