@@ -25,6 +25,7 @@ export interface User extends DBItem {
         lastLogin?: Date | string;
     };
     connections: UserConnection[];
+    accountBalance: number;
 }
 export interface Subscription extends DBItem {
     connectionId: string;

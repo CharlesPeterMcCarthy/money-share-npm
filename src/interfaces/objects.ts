@@ -29,6 +29,7 @@ export interface User extends DBItem {
 
     },
     connections: UserConnection[]; // Websocket connection ids (can be connected to multiple at same time)
+    accountBalance: number;
 }
 
 export interface Subscription extends DBItem {
