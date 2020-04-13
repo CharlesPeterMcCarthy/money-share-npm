@@ -43,3 +43,14 @@ export interface Subscription extends DBItem {
         subscribedAt: string;
     };
 }
+
+export interface PaymentIntent extends DBItem {
+    id: string;
+    clientSecret: string;
+    amount: number;
+    transactionComplete: boolean;
+    times: {
+        createdAt: string;
+        completeAt?: string;
+    }
+}
