@@ -54,3 +54,26 @@ export interface PaymentIntent extends DBItem {
         completeAt?: string;
     }
 }
+
+export interface Transaction extends DBItem {
+    transactionId: string;
+    type: 'DEPOSIT' | 'WITHDRAW' | 'SEND' | 'RECEIVE';
+    text: string;
+    amount: number;
+    newBalance: number;
+    accessKey: {
+        pk: string;
+        sk: string;
+    };
+    times: {
+        createdAt: string;
+    }
+}
+
+export interface Deposit extends DBItem {
+    depositId: string;
+    amount: number;
+    times: {
+        createdAt: string;
+    }
+}
