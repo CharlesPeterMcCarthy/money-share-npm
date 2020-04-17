@@ -1,4 +1,5 @@
 export type UserType = 'User' | 'Admin';
+export type TransactionType = 'DEPOSIT' | 'WITHDRAW' | 'TRANSFER' | 'RECEIVE';
 
 export interface DBItem {
     pk: string;
@@ -30,6 +31,7 @@ export interface User extends DBItem {
     },
     connections: UserConnection[]; // Websocket connection ids (can be connected to multiple at same time)
     accountBalance: number;
+    stripeCustomerId: string;
 }
 
 export interface Subscription extends DBItem {
@@ -57,7 +59,7 @@ export interface PaymentIntent extends DBItem {
 
 export interface Transaction extends DBItem {
     transactionId: string;
-    type: 'DEPOSIT' | 'WITHDRAW' | 'SEND' | 'RECEIVE';
+    type: TransactionType;
     text: string;
     amount: number;
     newBalance: number;
@@ -72,6 +74,14 @@ export interface Transaction extends DBItem {
 
 export interface Deposit extends DBItem {
     depositId: string;
+    amount: number;
+    times: {
+        createdAt: string;
+    }
+}
+
+export interface Withdrawal extends DBItem {
+    withdrawalId: string;
     amount: number;
     times: {
         createdAt: string;
