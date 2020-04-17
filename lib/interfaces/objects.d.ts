@@ -78,3 +78,12 @@ export interface Withdrawal extends DBItem {
         createdAt: string;
     };
 }
+export interface Transfer extends DBItem {
+    transferId: string;
+    amount: number;
+    recipientUserId: string;
+    message: string;
+    times: {
+        createdAt: string;
+    };
+}
