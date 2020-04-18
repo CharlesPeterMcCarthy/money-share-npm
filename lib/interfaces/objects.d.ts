@@ -22,12 +22,13 @@ export interface User extends DBItem {
     confirmed: boolean;
     times: {
         confirmedAt?: string;
-        createdAt: Date | string;
-        lastLogin?: Date | string;
+        createdAt: string;
+        lastLogin?: string;
     };
     connections: UserConnection[];
     accountBalance: number;
     stripeCustomerId: string;
+    searchText: string;
 }
 export interface Subscription extends DBItem {
     connectionId: string;
@@ -86,4 +87,17 @@ export interface Transfer extends DBItem {
     times: {
         createdAt: string;
     };
+}
+export interface UserProfile {
+    firstName: string;
+    lastName: string;
+    avatar: string;
+    userType: UserType;
+    times: {
+        createdAt: string;
+    };
+}
+export interface MyUserProfile extends UserProfile {
+    email: string;
+    accountBalance: number;
 }
