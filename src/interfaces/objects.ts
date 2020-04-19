@@ -15,11 +15,14 @@ export interface UserConnection {
     connectedAt: string;
 }
 
-export interface User extends DBItem {
+export interface UserBrief {
     userId: string;
     firstName: string;
     lastName: string;
     avatar?: string;
+}
+
+export interface User extends UserBrief, DBItem {
     email: string;
     userType: UserType;
     confirmed: boolean;
@@ -32,6 +35,7 @@ export interface User extends DBItem {
     accountBalance: number;
     stripeCustomerId: string;
     searchText: string;
+    recentRecipients: UserBrief[];
 }
 
 export interface Subscription extends DBItem {
