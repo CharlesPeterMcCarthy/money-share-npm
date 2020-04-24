@@ -17,13 +17,13 @@ export interface UserConnection {
 
 export interface UserBrief {
     userId: string;
+    email: string;
     firstName: string;
     lastName: string;
     avatar?: string;
 }
 
 export interface User extends UserBrief, DBItem {
-    email: string;
     userType: UserType;
     confirmed: boolean;
     times: {
@@ -67,6 +67,7 @@ export interface Transaction extends DBItem {
     text: string;
     amount: number;
     newBalance: number;
+    message?: string;
     accessKey: {
         pk: string;
         sk: string;
@@ -115,4 +116,9 @@ export interface UserProfile {
 export interface MyUserProfile extends UserProfile {
     email: string;
     accountBalance: number;
+}
+
+export interface GraphPoint {
+    y: number;
+    indexLabel?: string;
 }
